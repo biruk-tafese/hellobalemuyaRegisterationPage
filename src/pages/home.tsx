@@ -1,8 +1,7 @@
-import { Image } from "@mui/icons-material";
 import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import React from "react";
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/logo.png';
 
 const StyledButton = styled(Button)({
   borderRadius: "10px",
@@ -24,17 +23,66 @@ const HomePage: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         minHeight: "100vh",
-        px: 2,
-        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
+        px: { xs: 2, sm: 4 }, // Add horizontal padding for small and medium screens
       }}
-      
     >
-        <img src={logoImg} alt="logo" style={{width:'30%', height:'20%', alignItems:'left'}}/>
-
-      <Typography  variant="h4" sx={{ mb: 4 , color:'blueblack', "&:hover": { color: "darkblue" }}}>
+      {/* Background Box with Blur */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${logoImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(8px)", // Apply blur effect only to the background
+          zIndex: 0,
+        }}
+      />
+      
+      {/* Overlay for better text visibility */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(255, 255, 255, 0.5)", // Optional: Add a white overlay for better text visibility
+          zIndex: 1,
+        }}
+      />
+      
+      {/* Foreground Content */}
+      <Typography 
+        variant="h4" 
+        sx={{ 
+          mb: 4, 
+          color: 'blue', 
+          zIndex: 2, 
+          position: 'relative', 
+          fontSize: { xs: '1.5rem', sm: '2rem' }, // Responsive font size
+          "&:hover": { color: "darkblue" } 
+        }}
+      >
         Welcome to Hello Balemuya Registration Page
       </Typography>
-      <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center" , gap: 2, width: "100%", alignItems: "center" }}>
+      <Box 
+        sx={{ 
+          display: "flex", 
+          flexDirection: { xs: "column", sm: "row" }, // Stack buttons on small screens
+          justifyContent: "center", 
+          gap: 2, 
+          width: "100%", 
+          alignItems: "center", 
+          zIndex: 2, 
+          position: 'relative' 
+        }}
+      >
         <StyledButton
           sx={{ bgcolor: "blue", "&:hover": { bgcolor: "darkblue" } }}
         >

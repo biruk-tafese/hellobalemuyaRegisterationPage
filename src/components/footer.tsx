@@ -30,16 +30,16 @@ const Footer: React.FC = () => {
         </Button>. All rights reserved.
       </Typography>
       <Box sx={{ mt: 2 }}>
-        <Link href="#about" color="inherit" sx={{ mx: 2 }}>
+        <Link href="/about" color="inherit" sx={{ mx: 2 }}>
           About Us
         </Link>
-        <Link href="#services" color="inherit" sx={{ mx: 2 }}>
+        <Link href="/services" color="inherit" sx={{ mx: 2 }}>
           Services
         </Link>
-        <Link href="#contact" color="inherit" sx={{ mx: 2 }}>
+        <Link href="/contact" color="inherit" sx={{ mx: 2 }}>
           Contact
         </Link>
-        <Link href="#privacy" color="inherit" sx={{ mx: 2 }}>
+        <Link href="/privacy" color="inherit" sx={{ mx: 2 }}>
           Privacy Policy
         </Link>
       </Box>
